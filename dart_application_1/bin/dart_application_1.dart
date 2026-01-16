@@ -1,5 +1,14 @@
-import 'package:dart_application_1/dart_application_1.dart' as dart_application_1;
+void main() {
 
-void main(List<String> arguments) {
-  print('Hello world: ${dart_application_1.calculate()}!');
+  List<int> nombres = [25, 42, 79, 12];
+  print("Liste de départ : $nombres");
+
+  nombres.sort((a, b) => b.compareTo(a));
+  print("Liste triée (décroissant) : $nombres");
+
+  var listeDoublee = nombres.map((n) => n * 2).toList();
+  print("Chaque élément x 2 : $listeDoublee");
+
+  var nombresPairs = listeDoublee.where((n) => n.isEven).toList();
+  print("Nombres pairs finaux : $nombresPairs");
 }
