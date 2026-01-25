@@ -5,6 +5,17 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Log in or sign up',
+          style: TextStyle(
+            color: Color.fromARGB(255, 0, 0, 0), // Couleur noir
+            fontSize: 32, // Taille 
+            fontWeight: FontWeight.bold,//
+          ),
+        ),
+      ),
+    );
   }
 }
