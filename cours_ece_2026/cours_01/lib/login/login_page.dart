@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -16,7 +17,7 @@ class LoginPage extends StatelessWidget {
           ),
         ),
       ),
-     
+      
       body: Column(
         children: [
           const EmailField(),
@@ -34,6 +35,8 @@ class LoginPage extends StatelessWidget {
 } 
 
 
+
+
 class EmailField extends StatelessWidget {
   const EmailField({super.key});
 
@@ -44,14 +47,33 @@ class EmailField extends StatelessWidget {
 }
 
 class ContinueButton extends StatelessWidget {
-  final VoidCallback? onPressed; 
+  final VoidCallback? onPressed;
+
   const ContinueButton({super.key, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
-    return const Text('Bouton Continuer');
+    return SizedBox(
+      width: double.infinity, 
+      child: ElevatedButton(
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: const Color(0xFF2B8DA4), 
+          foregroundColor: Colors.white,           
+          padding: const EdgeInsets.symmetric(vertical: 16),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12), 
+          ),
+        ),
+        child: const Text(
+          'Continuer',
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
   }
 }
+
 
 class OrSeparator extends StatelessWidget {
   const OrSeparator({super.key});
@@ -62,17 +84,16 @@ class OrSeparator extends StatelessWidget {
   }
 }
 
-class SocialLoginButton extends StatelessWidget {
-  
-  final String? label;
-  final String? iconPath;
-  final VoidCallback? onPressed;
 
+class SocialLoginButton extends StatelessWidget {
+  final String? label;     
+  final String? iconPath;  
+  final VoidCallback? onPressed;
   const SocialLoginButton({
-    super.key, 
-    this.label, 
-    this.iconPath, 
-    this.onPressed
+    super.key,
+    this.label,
+    this.iconPath,
+    this.onPressed,
   });
 
   @override
