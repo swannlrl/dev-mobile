@@ -26,6 +26,4 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/apple_logo.svg
-    - assets/facebook_logo.svg
-    - assets/google_logo.svg
+    - assets/
