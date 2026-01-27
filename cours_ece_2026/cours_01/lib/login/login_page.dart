@@ -53,6 +53,11 @@ class _LoginPageState extends State<LoginPage> {
 
             const SizedBox(height: 30),
 
+            const OrDivider(),
+
+            const SizedBox(height: 30),
+
+
             ContinuerWithBouton(
               text: 'Apple',
               iconPath: 'assets/apple_logo.svg',
@@ -77,9 +82,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 }
 
-// =======================
-// Champ Email (simple)
-// =======================
+
 class EmailField extends StatelessWidget {
   final ValueChanged<String> onChanged;
 
@@ -101,9 +104,7 @@ class EmailField extends StatelessWidget {
   }
 }
 
-// =======================
-// Bouton Continue (enabled/disabled)
-// =======================
+
 class ContinueButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final bool enabled;
@@ -120,11 +121,11 @@ class ContinueButton extends StatelessWidget {
       width: 320,
       height: 56,
       child: FilledButton(
-        onPressed: onPressed, // null => désactivé automatiquement
+        onPressed: onPressed,
         style: FilledButton.styleFrom(
           backgroundColor: enabled
-              ? const Color(0xFF2B8C9A) // activé
-              : Colors.grey.shade400, // désactivé
+              ? const Color(0xFF2B8C9A) 
+              : Colors.grey.shade400,
           foregroundColor: Colors.white,
           textStyle: const TextStyle(
             fontSize: 18,
@@ -140,9 +141,7 @@ class ContinueButton extends StatelessWidget {
   }
 }
 
-// =======================
-// Bouton "Continuer avec"
-// =======================
+
 class ContinuerWithBouton extends StatelessWidget {
   final String text;
   final String iconPath;
@@ -197,6 +196,37 @@ class ContinuerWithBouton extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+
+class OrDivider extends StatelessWidget {
+  const OrDivider({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        const Expanded(
+          child: Divider(),
+        ),
+
+        const SizedBox(width: 10),
+
+        Text(
+          'Or',
+          style: TextStyle(
+            color: Theme.of(context).colorScheme.secondary, // textSecondary
+          ),
+        ),
+
+        const SizedBox(width: 10),
+
+        const Expanded(
+          child: Divider(),
+        ),
+      ],
     );
   }
 }
