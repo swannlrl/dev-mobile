@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:formation_flutter/l10n/app_localizations.dart';
+import 'package:formation_flutter/res/app_colors.dart';
+import 'package:formation_flutter/res/app_icons.dart';
+import 'package:formation_flutter/res/app_vectorial_images.dart';
+import 'product_page.dart'; // Import de la page produit (même dossier)
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final double screenHeight = MediaQuery.heightOf(context);
     AppLocalizations localizations = AppLocalizations.of(context)!;
 
     return Scaffold(
@@ -29,14 +33,16 @@ class HomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Spacer(flex: 20),
+              const Spacer(flex: 20),
               SvgPicture.asset(AppVectorialImages.illEmpty),
-              Spacer(flex: 15),
-              Text(
+              const Spacer(flex: 15),
+              const Text(
                 'Vous n\'avez pas encore scanné de produit',
                 textAlign: TextAlign.center,
               ),
-              Spacer(flex: 10),
+              const Spacer(flex: 10),
+              
+              // --- LE BOUTON COMMENCER ---
               TextButton(
                 style: OutlinedButton.styleFrom(
                   foregroundColor: AppColors.blue,
@@ -45,17 +51,26 @@ class HomePage extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(22.0)),
                   ),
                 ),
-                onPressed: () {},
+                // C'est ici que la magie opère pour changer de page :
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const ProductPage(),
+                    ),
+                  );
+                },
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(localizations.my_scans_screen_button.toUpperCase()),
                     const SizedBox(width: 4.0),
-                    Icon(Icons.arrow_right_alt_rounded),
+                    const Icon(Icons.arrow_right_alt_rounded),
                   ],
                 ),
               ),
-              Spacer(flex: 20),
+              // ---------------------------
+              
+              const Spacer(flex: 20),
             ],
           ),
         ),

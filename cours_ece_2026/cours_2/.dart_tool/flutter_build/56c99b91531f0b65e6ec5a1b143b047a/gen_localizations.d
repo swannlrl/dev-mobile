@@ -1,1 +1,0 @@
- /Users/g123k/Documents/ECE/cours_02/lib/l10n/app_localizations_fr.dart /Users/g123k/Documents/ECE/cours_02/lib/l10n/app_localizations.dart:  /Users/g123k/Documents/ECE/cours_02/l10n.yaml /Users/g123k/Documents/ECE/cours_02/lib/l10n/app_fr.arb
