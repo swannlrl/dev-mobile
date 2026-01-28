@@ -5,7 +5,7 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.10.7
+  sdk: '>=3.10.7 <4.0.0'
 
 dependencies:
   flutter:
@@ -13,19 +13,22 @@ dependencies:
 
   flutter_localizations:
     sdk: flutter
+  
   intl: any
 
   # UI
-  flutter_svg: 2.2.3
+  flutter_svg: ^2.2.3
+  # Ajout de Provider ici
+  provider: ^6.1.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^6.0.0
+  # J'ai remis une version compatible avec votre SDK
+  flutter_lints: ^3.0.0
 
 flutter:
-
   uses-material-design: true
 
   assets:

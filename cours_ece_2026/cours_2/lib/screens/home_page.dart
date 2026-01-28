@@ -4,13 +4,14 @@ import 'package:formation_flutter/l10n/app_localizations.dart';
 import 'package:formation_flutter/res/app_colors.dart';
 import 'package:formation_flutter/res/app_icons.dart';
 import 'package:formation_flutter/res/app_vectorial_images.dart';
-import 'product_page.dart'; // Import de la page produit (même dossier)
+import 'product_page.dart'; // Import de la page produit
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // La ligne "final double screenHeight..." a été supprimée car inutile ici
     AppLocalizations localizations = AppLocalizations.of(context)!;
 
     return Scaffold(
@@ -41,8 +42,6 @@ class HomePage extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               const Spacer(flex: 10),
-              
-              // --- LE BOUTON COMMENCER ---
               TextButton(
                 style: OutlinedButton.styleFrom(
                   foregroundColor: AppColors.blue,
@@ -51,7 +50,6 @@ class HomePage extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(22.0)),
                   ),
                 ),
-                // C'est ici que la magie opère pour changer de page :
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
@@ -68,8 +66,6 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
-              // ---------------------------
-              
               const Spacer(flex: 20),
             ],
           ),
