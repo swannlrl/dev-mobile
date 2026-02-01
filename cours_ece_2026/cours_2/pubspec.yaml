@@ -18,15 +18,23 @@ dependencies:
 
   # UI
   flutter_svg: ^2.2.3
-  # Ajout de Provider ici
   provider: ^6.1.5
+
+  # Réseau & Données (Ajouté)
+  dio: 5.9.0
+  retrofit: 4.7.3
+  json_annotation: 4.9.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  # J'ai remis une version compatible avec votre SDK
   flutter_lints: ^3.0.0
+
+  # Génération de code (Ajouté)
+  retrofit_generator: 10.0.6
+  json_serializable: any
+  build_runner: 2.9.0
 
 flutter:
   uses-material-design: true

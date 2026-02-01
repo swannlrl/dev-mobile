@@ -1,0 +1,173 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+ProductAPIEntity _$ProductAPIEntityFromJson(Map<String, dynamic> json) =>
+    ProductAPIEntity(
+      json['response'] == null
+          ? null
+          : ProductAPIResponseEntity.fromJson(
+              json['response'] as Map<String, dynamic>,
+            ),
+      json['error'],
+    );
+
+Map<String, dynamic> _$ProductAPIEntityToJson(ProductAPIEntity instance) =>
+    <String, dynamic>{'response': instance.response, 'error': instance.error};
+
+ProductAPIResponseEntity _$ProductAPIResponseEntityFromJson(
+  Map<String, dynamic> json,
+) => ProductAPIResponseEntity(
+  json['product_name'] as String?,
+  json['altName'] as String?,
+  json['code'] as String?,
+  json['pictures'] == null
+      ? null
+      : ProductAPIResponsePicturesEntity.fromJson(
+          json['pictures'] as Map<String, dynamic>,
+        ),
+  json['quantity'] as String?,
+  (json['brands'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  (json['stores'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  (json['countries'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  (json['countries_tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  json['nutriscore_grade'] as String?,
+  (json['nova_group'] as num?)?.toInt(),
+  (json['ecoScore'] as num?)?.toInt(),
+  json['ecoscore_grade'] as String?,
+  (json['nutritionScore'] as num?)?.toInt(),
+  json['ingredients'] == null
+      ? null
+      : ProductAPIResponseIngredientsEntity.fromJson(
+          json['ingredients'] as Map<String, dynamic>,
+        ),
+  json['nutrientLevels'] == null
+      ? null
+      : ProductAPIResponseNutrientLevelsEntity.fromJson(
+          json['nutrientLevels'] as Map<String, dynamic>,
+        ),
+  json['nutritionFacts'] == null
+      ? null
+      : ProductAPIResponseNutritionFacts.fromJson(
+          json['nutritionFacts'] as Map<String, dynamic>,
+        ),
+  json['traces'] == null
+      ? null
+      : ProductAPIResponseTracesEntity.fromJson(
+          json['traces'] as Map<String, dynamic>,
+        ),
+  (json['additives'] as Map<String, dynamic>?)?.map(
+    (k, e) => MapEntry(k, e as String),
+  ),
+  json['allergens'] == null
+      ? null
+      : ProductAPIResponseAllergensEntity.fromJson(
+          json['allergens'] as Map<String, dynamic>,
+        ),
+  (json['packaging'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  json['analysis'] == null
+      ? null
+      : ProductAPIResponseAnalysisEntity.fromJson(
+          json['analysis'] as Map<String, dynamic>,
+        ),
+)..imageFrontUrl = json['image_front_url'] as String?;
+
+Map<String, dynamic> _$ProductAPIResponseEntityToJson(
+  ProductAPIResponseEntity instance,
+) => <String, dynamic>{
+  'product_name': instance.name,
+  'altName': instance.altName,
+  'code': instance.barcode,
+  'pictures': instance.pictures,
+  'image_front_url': instance.imageFrontUrl,
+  'quantity': instance.quantity,
+  'brands': instance.brands,
+  'stores': instance.stores,
+  'countries': instance.countries,
+  'countries_tags': instance.manufacturingCountries,
+  'nutriscore_grade': instance.nutriScore,
+  'nova_group': instance.novaScore,
+  'ecoScore': instance.ecoScore,
+  'ecoscore_grade': instance.ecoScoreGrade,
+  'nutritionScore': instance.nutritionScore,
+  'ingredients': instance.ingredients,
+  'nutrientLevels': instance.nutrientLevels,
+  'nutritionFacts': instance.nutritionFacts,
+  'traces': instance.traces,
+  'additives': instance.additives,
+  'allergens': instance.allergens,
+  'packaging': instance.packaging,
+  'analysis': instance.analysis,
+};
+
+ProductAPIResponsePicturesEntity _$ProductAPIResponsePicturesEntityFromJson(
+  Map<String, dynamic> json,
+) => ProductAPIResponsePicturesEntity(
+  json['product'] as String?,
+  json['front'] as String?,
+  json['ingredients'] as String?,
+  json['nutrition'] as String?,
+);
+
+Map<String, dynamic> _$ProductAPIResponsePicturesEntityToJson(
+  ProductAPIResponsePicturesEntity instance,
+) => <String, dynamic>{
+  'product': instance.product,
+  'front': instance.front,
+  'ingredients': instance.ingredients,
+  'nutrition': instance.nutrition,
+};
+
+ProductAPIResponseIngredientsEntity
+_$ProductAPIResponseIngredientsEntityFromJson(Map<String, dynamic> json) =>
+    ProductAPIResponseIngredientsEntity(
+      (json['list'] as List<dynamic>?)?.map((e) => e as String).toList(),
+    );
+
+Map<String, dynamic> _$ProductAPIResponseIngredientsEntityToJson(
+  ProductAPIResponseIngredientsEntity instance,
+) => <String, dynamic>{'list': instance.list};
+
+ProductAPIResponseNutrientLevelsEntity
+_$ProductAPIResponseNutrientLevelsEntityFromJson(Map<String, dynamic> json) =>
+    ProductAPIResponseNutrientLevelsEntity();
+
+Map<String, dynamic> _$ProductAPIResponseNutrientLevelsEntityToJson(
+  ProductAPIResponseNutrientLevelsEntity instance,
+) => <String, dynamic>{};
+
+ProductAPIResponseNutritionFacts _$ProductAPIResponseNutritionFactsFromJson(
+  Map<String, dynamic> json,
+) => ProductAPIResponseNutritionFacts();
+
+Map<String, dynamic> _$ProductAPIResponseNutritionFactsToJson(
+  ProductAPIResponseNutritionFacts instance,
+) => <String, dynamic>{};
+
+ProductAPIResponseTracesEntity _$ProductAPIResponseTracesEntityFromJson(
+  Map<String, dynamic> json,
+) => ProductAPIResponseTracesEntity(
+  (json['list'] as List<dynamic>?)?.map((e) => e as String).toList(),
+);
+
+Map<String, dynamic> _$ProductAPIResponseTracesEntityToJson(
+  ProductAPIResponseTracesEntity instance,
+) => <String, dynamic>{'list': instance.list};
+
+ProductAPIResponseAllergensEntity _$ProductAPIResponseAllergensEntityFromJson(
+  Map<String, dynamic> json,
+) => ProductAPIResponseAllergensEntity(
+  (json['list'] as List<dynamic>?)?.map((e) => e as String).toList(),
+);
+
+Map<String, dynamic> _$ProductAPIResponseAllergensEntityToJson(
+  ProductAPIResponseAllergensEntity instance,
+) => <String, dynamic>{'list': instance.list};
+
+ProductAPIResponseAnalysisEntity _$ProductAPIResponseAnalysisEntityFromJson(
+  Map<String, dynamic> json,
+) => ProductAPIResponseAnalysisEntity();
+
+Map<String, dynamic> _$ProductAPIResponseAnalysisEntityToJson(
+  ProductAPIResponseAnalysisEntity instance,
+) => <String, dynamic>{};
